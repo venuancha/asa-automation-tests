@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:met="http://redbeemedia.com/asset-authority/metadata">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <met:getEditorialVersion>
+         <clientID>TestC10</clientID>
+         <clientEditorialVersionID>TestV10</clientEditorialVersionID>
+      </met:getEditorialVersion>
+   </soapenv:Body>
+</soapenv:Envelope>

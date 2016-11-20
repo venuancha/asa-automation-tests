@@ -1,0 +1,251 @@
+<definitions name='EditorialVersionManagementService' targetNamespace='http://redbeemedia.com/asset-authority/metadata' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://redbeemedia.com/asset-authority/metadata' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://redbeemedia.com/asset-authority/metadata' version='1.0' xmlns:tns='http://redbeemedia.com/asset-authority/metadata' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='ASAServiceException' type='tns:ASAServiceException'/>
+   <xs:element name='attachTechnicalVersion' type='tns:attachTechnicalVersion'/>
+   <xs:element name='attachTechnicalVersionResponse' type='tns:attachTechnicalVersionResponse'/>
+   <xs:element name='createOrUpdateEditorialVersion' type='tns:createOrUpdateEditorialVersion'/>
+   <xs:element name='createOrUpdateEditorialVersionResponse' type='tns:createOrUpdateEditorialVersionResponse'/>
+   <xs:element name='detachTechnicalVersion' type='tns:detachTechnicalVersion'/>
+   <xs:element name='detachTechnicalVersionResponse' type='tns:detachTechnicalVersionResponse'/>
+   <xs:element name='getEditorialVersion' type='tns:getEditorialVersion'/>
+   <xs:element name='getEditorialVersionResponse' type='tns:getEditorialVersionResponse'/>
+   <xs:complexType name='createOrUpdateEditorialVersion'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='editorialVersion' type='tns:editorialVersion'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='editorialVersion'>
+    <xs:complexContent>
+     <xs:extension base='tns:clientIdentifierDTO'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='additionalClockInfo' type='xs:string'/>
+       <xs:element minOccurs='0' name='audioDescribed' type='tns:audioDescription'/>
+       <xs:element minOccurs='0' name='audioDescriptionLanguage' type='xs:string'/>
+       <xs:element minOccurs='0' name='burntInSubtitle' type='tns:burntInSubtitle'/>
+       <xs:element minOccurs='0' name='description' type='xs:string'/>
+       <xs:element minOccurs='0' name='editorialRevisionNumber' type='xs:long'/>
+       <xs:element minOccurs='0' name='editorialVersionDescription' type='xs:string'/>
+       <xs:element minOccurs='0' name='guidance' type='xs:string'/>
+       <xs:element minOccurs='0' name='lastUpdated' type='xs:dateTime'/>
+       <xs:element minOccurs='0' name='mediaReelNumber' type='xs:int'/>
+       <xs:element minOccurs='0' name='mediaReelTotal' type='xs:int'/>
+       <xs:element minOccurs='0' name='mediaSet' type='xs:string'/>
+       <xs:element minOccurs='0' name='notes' type='xs:string'/>
+       <xs:element minOccurs='0' name='signed' type='tns:signing'/>
+       <xs:element minOccurs='0' name='spokenForeignLang' type='tns:spokenForeignLang'/>
+       <xs:element minOccurs='0' name='title' type='xs:string'/>
+       <xs:element minOccurs='0' name='txAnnouncementRecommended' type='xs:string'/>
+       <xs:element minOccurs='0' name='warning' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType abstract='true' name='clientIdentifierDTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientExtIdentifier' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientID' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='createOrUpdateEditorialVersionResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:actionResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='actionResult'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='actionTaken' type='tns:actionType'/>
+     <xs:element minOccurs='0' name='asaObjectId' type='xs:long'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ASAServiceException'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorDetail' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorIdentifier' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorMessage' type='xs:string'/>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='attachTechnicalVersion'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientID' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientEditorialVersionID' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientTechnicalVersionID' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='attachTechnicalVersionResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:actionResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='detachTechnicalVersion'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientID' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientEditorialVersionID' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientTechnicalVersionID' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='detachTechnicalVersionResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:actionResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getEditorialVersion'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientID' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientEditorialVersionID' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getEditorialVersionResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:editorialVersion'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name='audioDescription'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='YES'/>
+     <xs:enumeration value='NO'/>
+     <xs:enumeration value='AUDIO_ONLY'/>
+     <xs:enumeration value='AD_FROM_FILE'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='burntInSubtitle'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='FULLY'/>
+     <xs:enumeration value='PARTLY'/>
+     <xs:enumeration value='NOT_PRESENT'/>
+     <xs:enumeration value='REQUIRED'/>
+     <xs:enumeration value='NOT_REQUIRED'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='signing'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='YES'/>
+     <xs:enumeration value='NO'/>
+     <xs:enumeration value='SIGNER_ONLY'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='spokenForeignLang'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='FULLY'/>
+     <xs:enumeration value='PARTLY'/>
+     <xs:enumeration value='NO'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='actionType'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='CREATED'/>
+     <xs:enumeration value='UPDATED'/>
+     <xs:enumeration value='DELETED'/>
+     <xs:enumeration value='NONE'/>
+     <xs:enumeration value='ERROR'/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name='EditorialVersionManagementService_getEditorialVersionResponse'>
+  <part element='tns:getEditorialVersionResponse' name='getEditorialVersionResponse'></part>
+ </message>
+ <message name='EditorialVersionManagementService_createOrUpdateEditorialVersion'>
+  <part element='tns:createOrUpdateEditorialVersion' name='createOrUpdateEditorialVersion'></part>
+ </message>
+ <message name='EditorialVersionManagementService_attachTechnicalVersionResponse'>
+  <part element='tns:attachTechnicalVersionResponse' name='attachTechnicalVersionResponse'></part>
+ </message>
+ <message name='EditorialVersionManagementService_detachTechnicalVersionResponse'>
+  <part element='tns:detachTechnicalVersionResponse' name='detachTechnicalVersionResponse'></part>
+ </message>
+ <message name='EditorialVersionManagementService_getEditorialVersion'>
+  <part element='tns:getEditorialVersion' name='getEditorialVersion'></part>
+ </message>
+ <message name='EditorialVersionManagementService_createOrUpdateEditorialVersionResponse'>
+  <part element='tns:createOrUpdateEditorialVersionResponse' name='createOrUpdateEditorialVersionResponse'></part>
+ </message>
+ <message name='ASAServiceException'>
+  <part element='tns:ASAServiceException' name='ASAServiceException'></part>
+ </message>
+ <message name='EditorialVersionManagementService_attachTechnicalVersion'>
+  <part element='tns:attachTechnicalVersion' name='attachTechnicalVersion'></part>
+ </message>
+ <message name='EditorialVersionManagementService_detachTechnicalVersion'>
+  <part element='tns:detachTechnicalVersion' name='detachTechnicalVersion'></part>
+ </message>
+ <portType name='EditorialVersionManagementService'>
+  <operation name='attachTechnicalVersion' parameterOrder='attachTechnicalVersion'>
+   <input message='tns:EditorialVersionManagementService_attachTechnicalVersion'></input>
+   <output message='tns:EditorialVersionManagementService_attachTechnicalVersionResponse'></output>
+   <fault message='tns:ASAServiceException' name='ASAServiceException'></fault>
+  </operation>
+  <operation name='createOrUpdateEditorialVersion' parameterOrder='createOrUpdateEditorialVersion'>
+   <input message='tns:EditorialVersionManagementService_createOrUpdateEditorialVersion'></input>
+   <output message='tns:EditorialVersionManagementService_createOrUpdateEditorialVersionResponse'></output>
+   <fault message='tns:ASAServiceException' name='ASAServiceException'></fault>
+  </operation>
+  <operation name='detachTechnicalVersion' parameterOrder='detachTechnicalVersion'>
+   <input message='tns:EditorialVersionManagementService_detachTechnicalVersion'></input>
+   <output message='tns:EditorialVersionManagementService_detachTechnicalVersionResponse'></output>
+   <fault message='tns:ASAServiceException' name='ASAServiceException'></fault>
+  </operation>
+  <operation name='getEditorialVersion' parameterOrder='getEditorialVersion'>
+   <input message='tns:EditorialVersionManagementService_getEditorialVersion'></input>
+   <output message='tns:EditorialVersionManagementService_getEditorialVersionResponse'></output>
+   <fault message='tns:ASAServiceException' name='ASAServiceException'></fault>
+  </operation>
+ </portType>
+ <binding name='EditorialVersionManagementServiceBinding' type='tns:EditorialVersionManagementService'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='attachTechnicalVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ASAServiceException'>
+    <soap:fault name='ASAServiceException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='createOrUpdateEditorialVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ASAServiceException'>
+    <soap:fault name='ASAServiceException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='detachTechnicalVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ASAServiceException'>
+    <soap:fault name='ASAServiceException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='getEditorialVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ASAServiceException'>
+    <soap:fault name='ASAServiceException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='EditorialVersionManagementService'>
+  <port binding='tns:EditorialVersionManagementServiceBinding' name='EditorialVersionManagementServicePort'>
+   <soap:address location='http://ukwcc4jb4d03.c4.uk.redbeemedia.net:8080/assetAuthority/EditorialVersionManagementService'/>
+  </port>
+ </service>
+</definitions>

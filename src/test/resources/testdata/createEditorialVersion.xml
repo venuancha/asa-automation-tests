@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:met="http://redbeemedia.com/asset-authority/metadata">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <met:createOrUpdateEditorialVersion>
+         <editorialVersion>
+            <clientExtIdentifier>TestV10</clientExtIdentifier>
+            <clientID>TestC10</clientID>
+            <additionalClockInfo>No</additionalClockInfo>
+            <audioDescribed>No</audioDescribed>
+            <audioDescriptionLanguage>Yes</audioDescriptionLanguage>
+            <burntInSubtitle>Yes</burntInSubtitle>
+            <description>TestDescription</description>
+            <editorialRevisionNumber>22</editorialRevisionNumber>
+            <editorialVersionDescription>TestEditorialVersionDes</editorialVersionDescription>
+            <guidance>YesGuidance</guidance>
+            <lastUpdated>?</lastUpdated>
+            <mediaReelNumber>?</mediaReelNumber>
+            <mediaReelTotal>?</mediaReelTotal>
+            <mediaSet>YesMediaSet</mediaSet>
+            <notes>Notes</notes>
+            <signed>?</signed>
+            <spokenForeignLang>?</spokenForeignLang>
+            <title>TestTitle</title>
+            <txAnnouncementRecommended>YesRecommended</txAnnouncementRecommended>
+            <warning>NoWarning</warning>
+         </editorialVersion>
+      </met:createOrUpdateEditorialVersion>
+   </soapenv:Body>
+</soapenv:Envelope>
